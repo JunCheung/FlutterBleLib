@@ -35,8 +35,8 @@ android {
     lintOptions {
 //        disable 'InvalidPackage'
     }
-    buildToolsVersion '31.0.0'
-    ndkVersion '23.0.7599858'
+    //buildToolsVersion '31.0.0'
+    //ndkVersion '23.0.7599858'
 
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
