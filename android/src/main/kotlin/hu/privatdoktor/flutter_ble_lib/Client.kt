@@ -187,7 +187,11 @@ class Client(private val binding: FlutterPluginBinding) : BluetoothCentralManage
             else -> ScanMode.LOW_POWER
         }
         centralManager.setScanMode(mode)
-        centralManager.scanForPeripheralsWithServices(filteredUUIDs.toTypedArray())
+        if (filteredUUIDs.isEmpty()) {
+            centralManager.scanForPeripherals()
+        } else {
+            centralManager.scanForPeripheralsWithServices(filteredUUIDs.toTypedArray())
+        }
     }
 
     fun stopDeviceScan() {
